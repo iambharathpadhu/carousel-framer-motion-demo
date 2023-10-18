@@ -96,6 +96,12 @@ export const Carousel = () => {
               paginate(-1);
             }
           }}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
         />
       </AnimatePresence>
       <div className="next" onClick={() => paginate(1)}>
