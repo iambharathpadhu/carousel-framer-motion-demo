@@ -33,7 +33,7 @@ function App() {
         style={{
           display: isFullscreen ? "none" : "block",
           position: "absolute",
-          top: "0",
+          top: "4",
           left: "1",
           zIndex: 2,
         }}
