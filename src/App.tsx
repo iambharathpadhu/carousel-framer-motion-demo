@@ -33,9 +33,11 @@ function App() {
         style={{
           display: isFullscreen ? "none" : "block",
           position: "absolute",
-          top: "4",
+          top: "0",
           left: "1",
           zIndex: 2,
+          backgroundColor: "transparent",
+          border: "none",
         }}
       >
         Go Fullscreen

@@ -8,6 +8,18 @@ const images = [
   "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png",
 ];
 
+const slides = [
+  "src/assets/slides/Slide1.png",
+  "src/assets/slides/Slide2.png",
+  "src/assets/slides/Slide3.png",
+  "src/assets/slides/Slide4.png",
+  "src/assets/slides/Slide5.png",
+  "src/assets/slides/Slide6.png",
+  "src/assets/slides/Slide7.png",
+  "src/assets/slides/Slide8.png",
+  "src/assets/slides/Slide9.png",
+];
+
 const variants = {
   enter: (direction: number) => {
     return {
@@ -38,7 +50,7 @@ export const Carousel = () => {
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState(0);
 
-  const imageIndex = wrap(0, images.length, page);
+  const imageIndex = wrap(0, slides.length, page);
 
   const paginate = (newDirection: number) => {
     setPage(page + newDirection);
@@ -74,7 +86,7 @@ export const Carousel = () => {
       <AnimatePresence initial={false} custom={direction}>
         <motion.img
           key={page}
-          src={images[imageIndex]}
+          src={slides[imageIndex]}
           custom={direction}
           variants={variants}
           initial="enter"
