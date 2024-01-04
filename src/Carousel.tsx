@@ -2,22 +2,17 @@ import { useCallback, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 
-const images = [
-  "https://d33wubrfki0l68.cloudfront.net/dd23708ebc4053551bb33e18b7174e73b6e1710b/dea24/static/images/wallpapers/shared-colors@2x.png",
-  "https://d33wubrfki0l68.cloudfront.net/49de349d12db851952c5556f3c637ca772745316/cfc56/static/images/wallpapers/bridge-02@2x.png",
-  "https://d33wubrfki0l68.cloudfront.net/594de66469079c21fc54c14db0591305a1198dd6/3f4b1/static/images/wallpapers/bridge-01@2x.png",
-];
-
 const slides = [
-  "src/assets/slides/Slide1.png",
-  "src/assets/slides/Slide2.png",
-  "src/assets/slides/Slide3.png",
-  "src/assets/slides/Slide4.png",
-  "src/assets/slides/Slide5.png",
-  "src/assets/slides/Slide6.png",
-  "src/assets/slides/Slide7.png",
-  "src/assets/slides/Slide8.png",
-  "src/assets/slides/Slide9.png",
+  "src/assets/slides/1.png",
+  "src/assets/slides/2.png",
+  "src/assets/slides/3.png",
+  "src/assets/slides/4.png",
+  "src/assets/slides/5.png",
+  "src/assets/slides/6.png",
+  "src/assets/slides/7.png",
+  "src/assets/slides/8.png",
+  "src/assets/slides/9.png",
+  "src/assets/slides/10.png",
 ];
 
 const variants = {
@@ -46,7 +41,7 @@ const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
 
-export const Carousel = () => {
+export const Carousel = ({ isFullscreen }: { isFullscreen: boolean }) => {
   const [page, setPage] = useState(0);
   const [direction, setDirection] = useState(0);
 
@@ -116,12 +111,16 @@ export const Carousel = () => {
           }}
         />
       </AnimatePresence>
-      <div className="next" onClick={() => paginate(1)}>
-        {"‣"}
-      </div>
-      <div className="prev" onClick={() => paginate(-1)}>
-        {"‣"}
-      </div>
+      {!isFullscreen && (
+        <div className="next" onClick={() => paginate(1)}>
+          {"‣"}
+        </div>
+      )}
+      {!isFullscreen && (
+        <div className="prev" onClick={() => paginate(-1)}>
+          {"‣"}
+        </div>
+      )}
     </>
   );
 };

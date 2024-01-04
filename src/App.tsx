@@ -42,7 +42,7 @@ function App() {
       >
         Go Fullscreen
       </button>
-      <Carousel />
+      <Carousel isFullscreen={isFullscreen} />
     </div>
   );
 }
